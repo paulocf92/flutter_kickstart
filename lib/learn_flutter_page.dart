@@ -13,6 +13,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Flutter'),
+        automaticallyImplyLeading: false,
       ),
     );
   }
