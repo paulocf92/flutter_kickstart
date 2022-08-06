@@ -52,6 +52,12 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
               ),
             ),
           ),
+          ElevatedButton(
+            onPressed: () {
+              debugPrint('Elevated Button');
+            },
+            child: const Text('Elevated Button'),
+          ),
         ],
       ),
     );
