@@ -71,6 +71,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
             child: const Text('Text Button'),
           ),
           GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onTap: () {
               debugPrint('This is the row');
             },
