@@ -24,95 +24,98 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           icon: const Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: Column(
-        children: [
-          Center(
-            child: Image.asset(
-              'images/einstein.jpg',
-              height: 300,
-              width: 300,
-              fit: BoxFit.fitWidth,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Image.asset(
+                'images/einstein.jpg',
+                height: 300,
+                width: 300,
+                fit: BoxFit.fitWidth,
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Divider(
-            color: Colors.black,
-            thickness: 2,
-          ),
-          Container(
-            color: Colors.blueGrey,
-            width: double.infinity,
-            margin: const EdgeInsets.all(10.0),
-            padding: const EdgeInsets.all(10.0),
-            child: const Center(
-              child: Text(
-                'This is a text widget',
-                style: TextStyle(
-                  color: Colors.white,
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(
+              color: Colors.black,
+              thickness: 2,
+            ),
+            Container(
+              color: Colors.blueGrey,
+              width: double.infinity,
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
+              child: const Center(
+                child: Text(
+                  'This is a text widget',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: isSwitched ? Colors.green : Colors.blue,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: isSwitched ? Colors.green : Colors.blue,
+              ),
+              onPressed: () {
+                debugPrint('Elevated Button');
+              },
+              child: const Text('Elevated Button'),
             ),
-            onPressed: () {
-              debugPrint('Elevated Button');
-            },
-            child: const Text('Elevated Button'),
-          ),
-          OutlinedButton(
-            onPressed: () {
-              debugPrint('Outlined Button');
-            },
-            child: const Text('Outlined Button'),
-          ),
-          TextButton(
-            onPressed: () {
-              debugPrint('Text Button');
-            },
-            child: const Text('Text Button'),
-          ),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
-              debugPrint('This is the row');
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.blue,
-                ),
-                Text('Row widget'),
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.blue,
-                ),
-              ],
+            OutlinedButton(
+              onPressed: () {
+                debugPrint('Outlined Button');
+              },
+              child: const Text('Outlined Button'),
             ),
-          ),
-          Switch(
-            value: isSwitched,
-            onChanged: (bool changed) {
-              setState(() {
-                isSwitched = changed;
-              });
-            },
-          ),
-          Checkbox(
-            value: isChecked,
-            onChanged: (bool? changed) {
-              setState(() {
-                isChecked = changed;
-              });
-            },
-          ),
-        ],
+            TextButton(
+              onPressed: () {
+                debugPrint('Text Button');
+              },
+              child: const Text('Text Button'),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                debugPrint('This is the row');
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.blue,
+                  ),
+                  Text('Row widget'),
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+            Switch(
+              value: isSwitched,
+              onChanged: (bool changed) {
+                setState(() {
+                  isSwitched = changed;
+                });
+              },
+            ),
+            Checkbox(
+              value: isChecked,
+              onChanged: (bool? changed) {
+                setState(() {
+                  isChecked = changed;
+                });
+              },
+            ),
+            Image.network('https://wallpaperaccess.com/full/1909531.jpg'),
+          ],
+        ),
       ),
     );
   }
