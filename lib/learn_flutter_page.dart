@@ -30,7 +30,11 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
               width: 300,
               fit: BoxFit.fitWidth,
             ),
-          )
+          ),
+          const Divider(
+            color: Colors.black,
+            thickness: 2,
+          ),
         ],
       ),
     );
