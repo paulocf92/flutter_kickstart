@@ -14,9 +14,23 @@ class ProfilePage extends StatelessWidget {
           title: Text('Item ${(index + 1)}'),
           leading: const Icon(Icons.person),
           trailing: const Icon(Icons.select_all),
-          onTap: () {
-            debugPrint('Item ${(index + 1)} selected');
-          },
+          onTap: () => showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+              title: const Text('Item selected'),
+              content: Text('Item ${(index + 1)} selected'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'Cancel'),
+                  child: const Text('Cancel'),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'OK'),
+                  child: const Text('OK'),
+                ),
+              ],
+            ),
+          ),
         );
       },
     );
